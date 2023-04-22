@@ -1,6 +1,9 @@
 # PropNoteCode
 Property Management System
 
+# Contributors
+1. Pippa Jarvie
+
 Project Setup
 
 1. Instal nodejs
