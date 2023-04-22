@@ -35,7 +35,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: './package-lock.json'
+        cache-dependency-path: 'Angular/package-lock.json'
         
     - name: Install Dependecies
       if: steps.filter.outputs.Angular == 'true'
