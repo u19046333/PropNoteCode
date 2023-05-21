@@ -24,6 +24,7 @@ namespace WebApi.Controllers
         //[Authorize]
         public async Task<IActionResult> GetAllBrokers()
         {
+            //Test
             try
             {
                 List<Broker> brokers = new();
