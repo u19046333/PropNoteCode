@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using WebApi.Migrations;
 using WebApi.Models.Broker;
 using WebApi.Models.Interfaces;
 
