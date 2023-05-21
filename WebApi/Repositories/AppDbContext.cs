@@ -14,7 +14,7 @@ namespace WebApi.Repositories
         }
 
         public DbSet<Broker> Brokers { get; set; }
-        public DbSet<Property> Properties { get; set; }
+        public DbSet<WebApi.Models.Property.Property> Properties { get; set; }
         public DbSet<Tenant> Tenants { get; set; }
         public DbSet<Lease> Leases { get; set; }
 
