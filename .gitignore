@@ -227,13 +227,6 @@ _Pvt_Extensions
 
 # Paket dependency manager
 .paket/paket.exe
-
-# FAKE - F# Make
-.fake/
-AB.GradCoin.WebApi/intent/AB.GradCoin.WebApi/Intent.Metadata/Services/Services/Elements/Query/
-AB.GradCoin.WebApi/AB.GradCoin.Angular/ClientApp/.angular/cache/
-AB.GradCoin.WebApi/AB.GradCoin.Angular/ClientApp/.angular/cache/13.2.4/angular-webpack/2a8524e5a295aea429332ab01d19abbd2800e996/1.pack
-AB.GradCoin.WebApi/AB.GradCoin.Angular/ClientApp/.angular/cache/13.2.4/angular-webpack/2a8524e5a295aea429332ab01d19abbd2800e996/1.pack
 AB.GradCoin.WebApi/AB.GradCoin.Angular/ClientApp/.angular/cache/13.2.4/angular-webpack/2a8524e5a295aea429332ab01d19abbd2800e996/2.pack
 AB.GradCoin.WebApi/AB.GradCoin.Angular/ClientApp/.angular/cache/13.2.4/angular-webpack/2a8524e5a295aea429332ab01d19abbd2800e996/index.pack
 AB.GradCoin.WebApi/AB.GradCoin.Angular/ClientApp/.angular/cache/13.2.4/angular-webpack/2a8524e5a295aea429332ab01d19abbd2800e996/index.pack.old
