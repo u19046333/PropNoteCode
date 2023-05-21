@@ -4,7 +4,7 @@ using WebApi.Models.Broker;
 using WebApi.Models.Lease;
 using WebApi.Models.Tenant;
 
-namespace WebApi.Repositories
+namespace WebApi.Migrations
 {
     public class AppDbContext : DbContext
     {
@@ -14,7 +14,7 @@ namespace WebApi.Repositories
         }
 
         public DbSet<Broker> Brokers { get; set; }
-        public DbSet<WebApi.Models.Property.Property> Properties { get; set; }
+        public DbSet<Models.Property.Property> Properties { get; set; }
         public DbSet<Tenant> Tenants { get; set; }
         public DbSet<Lease> Leases { get; set; }
 
