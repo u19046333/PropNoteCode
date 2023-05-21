@@ -1,5 +1,7 @@
 ﻿using WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Models.Lease;
+using WebApi.Interfaces;
 
 namespace WebApi.Controllers
 {
@@ -8,11 +10,11 @@ namespace WebApi.Controllers
     [ApiController]
     public class LeaseController : Controller
     {
-        public readonly IRepository _repository;
+        public readonly ILeaseRepository _leaseRepository;
 
-        public LeaseController(IRepository repository)
+        public LeaseController(ILeaseRepository repository)
         {
-            _repository = repository;
+            _leaseRepository = repository;
         }
 
         [HttpGet]
@@ -21,7 +23,7 @@ namespace WebApi.Controllers
         {
             try
             {
-                var allLeases = await _repository.GetAllLeasesAsync();
+                var allLeases = await _leaseRepository.GetAllLeasesAsync();
                 List<LeaseResponse> leases = new List<LeaseResponse>();
                 foreach (var lease in allLeases)
                 {
@@ -30,7 +32,7 @@ namespace WebApi.Controllers
                         StartDate = lease.StartDate,
                         EndDate = lease.EndDate,
                         PropertyDescription = lease.Property.Description,
-                        TenantName = lease.Tenant.Name
+                        //TenantName = lease.Tenant.Name
                     });
                 }
 
@@ -53,7 +55,7 @@ namespace WebApi.Controllers
                 TenantID = leaseRequest.TenantID,
                 PropertyID = leaseRequest.PropertyID
             };
-            await _repository.AddLease(lease);
+            await _leaseRepository.AddLease(lease);
             return Ok(lease);
         }
     }

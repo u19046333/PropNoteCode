@@ -1,7 +1,10 @@
-﻿using WebApi.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using WebApi.Models.Broker;
+using WebApi.Models.Lease;
+using WebApi.Models.Tenant;
 
-namespace WebApi.Models
+namespace WebApi.Repositories
 {
     public class AppDbContext : DbContext
     {

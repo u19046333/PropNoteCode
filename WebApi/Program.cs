@@ -1,6 +1,9 @@
 using WebApi.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
+using WebApi.Repositories;
+using WebApi.Interfaces;
+using WebApi.Models.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +23,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddScoped<IRepository, Repository>();
+//TODO" Alwaysd add scope for whenever a new Repo and Interface is added.
+builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
+builder.Services.AddScoped<ILeaseRepository, LeaseRepository>();
+builder.Services.AddScoped<IBrokerRepository, BrokerRespository>();
+builder.Services.AddScoped<ITenantRepository, TenantRepository>();
 
 var app = builder.Build();
 

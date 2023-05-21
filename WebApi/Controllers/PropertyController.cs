@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata.Ecma335;
 using System.Xml.Linq;
+using WebApi.Models.Property;
+using WebApi.Interfaces;
 
 namespace WebApi.Controllers
 {
@@ -12,11 +14,11 @@ namespace WebApi.Controllers
     [ApiController]
     public class PropertyController : Controller
     {
-        public readonly IRepository _repository;
+        public readonly IPropertyRepository _propertyRepository;
 
-        public PropertyController(IRepository repository)
+        public PropertyController(IPropertyRepository repository)
         {
-            _repository = repository;
+            _propertyRepository = repository;
         }
 
         [HttpGet]
@@ -25,7 +27,7 @@ namespace WebApi.Controllers
         {
             try
             {
-                var allProperties = await _repository.GetAllPropertiesAsync();
+                var allProperties = await _propertyRepository.GetAllPropertiesAsync();
                 List<PropertyResponse> properties = new List<PropertyResponse>();
                 foreach (var property in allProperties)
                 {
@@ -68,7 +70,7 @@ namespace WebApi.Controllers
                PurchaseAmount = propertyRequest.PurchaseAmount,
                
             };
-            await _repository.AddProperty(property);
+            await _propertyRepository.AddProperty(property);
             return Ok(property);
         }
     }

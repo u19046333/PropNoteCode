@@ -1,6 +1,6 @@
-﻿namespace WebApi.Models
+﻿namespace WebApi.Models.Property
 {
-    public class PropertyRequest
+    public class PropertyResponse
     {
         public string Description { get; set; }
         public string BuildingNumber { get; set; }
@@ -10,6 +10,7 @@
         public DateTime PurchaseDate { get; set; }
         public string Size { get; set; }
         public string Yard { get; set; }
-        public int BrokerID { get; set; }
+
+        public string BrokerName { get; set; }
     }
 }

@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata.Ecma335;
 using System.Xml.Linq;
+using WebApi.Models.Broker;
+using WebApi.Models.Interfaces;
 
 namespace WebApi.Controllers
 {
@@ -12,10 +14,10 @@ namespace WebApi.Controllers
     [ApiController]
     public class BrokerController : Controller
     {
-        private readonly IRepository _repository;
-        public BrokerController(IRepository repository) 
+        private readonly IBrokerRepository _brokerRepository;
+        public BrokerController(IBrokerRepository repository) 
         {
-            _repository = repository;
+            _brokerRepository = repository;
         }
 
         [HttpGet]
@@ -28,7 +30,7 @@ namespace WebApi.Controllers
             try
             {
                 List<Broker> brokers = new();
-                var results = await _repository.GetAllBrokersAsync();
+                var results = await _brokerRepository.GetAllBrokersAsync();
                 foreach (var broker in results)
                 {
                     brokers.Add(new Broker
@@ -65,7 +67,7 @@ namespace WebApi.Controllers
             };
             try
             {
-                await _repository.AddBroker(broker);
+                await _brokerRepository.AddBroker(broker);
 
                 return Ok(broker);
             }
