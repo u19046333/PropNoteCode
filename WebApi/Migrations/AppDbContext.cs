@@ -6,7 +6,7 @@ using WebApi.Models.Data;
 using WebApi.Models;
 using WebApi.Models.Users;
 
-namespace WebApi.Repositories
+namespace WebApi.Migrations
 {
     public class AppDbContext : DbContext
     {

@@ -4,6 +4,7 @@ using System;
 using WebApi.Repositories;
 using WebApi.Interfaces;
 using WebApi.Models.Interfaces;
+using WebApi.Migrations;
 
 var builder = WebApplication.CreateBuilder(args);
 
