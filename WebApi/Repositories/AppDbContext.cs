@@ -4,7 +4,7 @@ using WebApi.Models.Broker;
 using WebApi.Models.Lease;
 using WebApi.Models.Tenant;
 
-namespace WebApi.Migrations
+namespace WebApi.Repositories
 {
     public class AppDbContext : DbContext
     {
@@ -13,10 +13,10 @@ namespace WebApi.Migrations
         {
         }
 
-        public DbSet<Broker> Brokers { get; set; }
-        public DbSet<Models.Property.Property> Properties { get; set; }
-        public DbSet<Tenant> Tenants { get; set; }
-        public DbSet<Lease> Leases { get; set; }
+        public DbSet<Broker> Broker { get; set; }
+        public DbSet<Models.Property.Property> Property { get; set; }
+        public DbSet<Tenant> Tenant { get; set; }
+        public DbSet<Lease> Lease { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
