@@ -4,6 +4,7 @@ using WebApi.Models.Broker;
 using WebApi.Models.Lease;
 using WebApi.Models.Data;
 using WebApi.Models;
+using WebApi.Models.Users;
 
 namespace WebApi.Repositories
 {
@@ -21,6 +22,8 @@ namespace WebApi.Repositories
         public DbSet<User> User { get; set; }
         public DbSet<Data> Data { get; set; }
         public DbSet<DataType> DataType { get; set; }
+        public DbSet<Employee> Employee { get; set; }
+        public DbSet<Deposit> Deposit { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

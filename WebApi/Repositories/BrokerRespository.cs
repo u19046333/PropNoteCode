@@ -35,11 +35,16 @@ namespace WebApi.Repositories
 
         public async Task EditBroker(int brokerID, Broker broker) { }
 
-        public async Task DeleteBroker(Broker broker) { }
+        public async Task DeleteBrokerAsync(Broker broker) { }
 
         public void Delete<T>(T entity) where T :class
         {
             _appDbContext.Remove(entity);
+        }
+        public async Task<Broker> GetBrokerByID(int brokerID)
+        {
+            IQueryable<Broker> query = _appDbContext.Broker.Where(x => x.BrokerID == brokerID);
+            return query.FirstOrDefault();
         }
     }
 }

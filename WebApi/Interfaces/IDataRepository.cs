@@ -15,5 +15,10 @@ namespace WebApi.Interfaces
         Task AddDataType(DataType dataType);
 
         Task<DataType[]> GetAllDataTypesAsync();
+        Task EditData(int dataID, Data data);
+        Task DeleteData(Data data);
+        Task EditDataType(int dataTypeID, DataType dataType);
+        Task DeleteDataType(DataType dataType);
+        void Delete<T>(T entity) where T : class;
     }
 }

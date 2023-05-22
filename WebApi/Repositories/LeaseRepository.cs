@@ -38,7 +38,7 @@ namespace WebApi.Repositories
 
         public async Task EditLease(int leaseID, Lease lease) { }
 
-        public async Task DeleteLease(Lease lease) { }
+        public async Task DeleteLeaseAsync(Lease lease) { }
 
         public void Delete<T>(T entity) where T : class
         {
@@ -49,5 +49,27 @@ namespace WebApi.Repositories
             IQueryable<Tenant> query = _appDbContext.Tenant;
             return await query.ToArrayAsync();
         }
+
+        public async Task<Deposit[]> GetAllDepositsAsync()
+        {
+            IQueryable<Deposit> query = _appDbContext.Deposit;
+            return await query.ToArrayAsync();
+        }
+        public async Task AddDeposit(Deposit deposit)
+        {
+            _appDbContext.Add(deposit);
+            await _appDbContext.SaveChangesAsync();
+        }
+        public async Task<Lease> GetLeaseByID(int leaseID)
+        {
+            IQueryable<Lease> query = _appDbContext.Lease.Where(x => x.LeaseID == leaseID);
+            return query.FirstOrDefault();
+        }
+        public async Task<Deposit> GetDepositByID(int depositID)
+        {
+            IQueryable<Deposit> query = _appDbContext.Deposit.Where(x => x.DepositID == depositID);
+            return query.FirstOrDefault();
+        }
+
     }
     }
