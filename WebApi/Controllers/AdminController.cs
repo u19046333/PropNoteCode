@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Models.Admin;
-using WebApi.Repositories;
+using WebApi.Interfaces;
 using WebApi.ViewModels;
 
 namespace WebApi.Controllers
