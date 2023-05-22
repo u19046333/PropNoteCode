@@ -1,4 +1,6 @@
-﻿namespace WebApi.Models.Lease
+﻿using WebApi.Models;
+
+namespace WebApi.Models.Lease
 {
     public class Lease
     {
@@ -8,7 +10,7 @@
         public int MonthlyAmount { get; set; }
         public int TenantID { get; set; }
         public int PropertyID { get; set; }
-        public Tenant? Tenant { get; set; }
+        public WebApi.Models.Tenant? Tenant { get; set; }
         public WebApi.Models.Property.Property? Property { get; set; }
     }
 }

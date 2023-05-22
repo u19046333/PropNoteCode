@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Models.Lease;
 using WebApi.Interfaces;
+using WebApi.Models.Users;
 
 namespace WebApi.Controllers
 {

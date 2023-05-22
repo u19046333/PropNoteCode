@@ -1,4 +1,4 @@
-﻿using WebApi.Models.Lease;
+﻿using WebApi.Models;
 
 namespace WebApi.Interfaces
 {
