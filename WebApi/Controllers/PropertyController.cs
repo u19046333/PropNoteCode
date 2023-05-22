@@ -33,6 +33,7 @@ namespace WebApi.Controllers
                 {
                     properties.Add(new PropertyResponse
                     {
+                        PropertyID = property.PropertyID,
                         BrokerName = property.Broker.Name,
                         BuildingNumber = property.BuildingNumber,
                         Description = property.Description,

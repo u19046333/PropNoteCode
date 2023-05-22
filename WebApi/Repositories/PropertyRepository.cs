@@ -26,7 +26,7 @@ namespace WebApi.Repositories
         public async Task<Property[]> GetAllPropertiesAsync()
         {
             // IQueryable<Property> query = _appDbContext.Properties.Include(x => x.Broker);
-            IQueryable<Property> query = (IQueryable<Property>)_appDbContext.Property;
+            IQueryable<Property> query = (IQueryable<Property>)_appDbContext.Property.Include(x => x.Broker);
             return await query.ToArrayAsync();
         }
 

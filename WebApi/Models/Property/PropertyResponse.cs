@@ -2,6 +2,7 @@
 {
     public class PropertyResponse
     {
+        public int PropertyID { get; set; }
         public string Description { get; set; }
         public int BuildingNumber { get; set; }
         public string Street { get; set; }

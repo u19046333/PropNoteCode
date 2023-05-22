@@ -32,7 +32,8 @@ namespace WebApi.Controllers
                         StartDate = lease.StartDate,
                         EndDate = lease.EndDate,
                         PropertyDescription = lease.Property.Description,
-                        //TenantName = lease.Tenant.Name
+                        TenantID = lease.TenantID,
+                        MonthlyAmount = lease.MonthlyAmount,
                     });
                 }
 
@@ -56,7 +57,7 @@ namespace WebApi.Controllers
                     tenants.Add(new Tenant
                     {
                         TenantID = tenant.TenantID,
-                        CompanyEmail = tenant.CompanyEmail,
+                        CompanyNumber = tenant.CompanyNumber,
                         CompanyName = tenant.CompanyName
                     });
                 }
@@ -78,7 +79,8 @@ namespace WebApi.Controllers
                 StartDate = leaseRequest.StartDate,
                 EndDate = leaseRequest.EndDate,
                 TenantID = leaseRequest.TenantID,
-                PropertyID = leaseRequest.PropertyID
+                PropertyID = leaseRequest.PropertyID,
+                MonthlyAmount = leaseRequest.MonthlyAmount,
             };
             await _leaseRepository.AddLease(lease);
             return Ok(lease);

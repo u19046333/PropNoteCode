@@ -4,6 +4,6 @@
     {
         public int TenantID { get; set; }
         public string CompanyName { get; set; }
-        public string CompanyEmail { get; set; }
+        public int CompanyNumber { get; set; }
     }
 }
