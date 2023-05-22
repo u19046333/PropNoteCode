@@ -1,4 +1,4 @@
-﻿using WebApi.Models.Tenant;
+﻿using WebApi.Models.Lease;
 
 namespace WebApi.Interfaces
 {

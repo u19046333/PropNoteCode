@@ -12,9 +12,9 @@ namespace WebApi.Controllers
     {
         public readonly ILeaseRepository _leaseRepository;
 
-        public LeaseController(ILeaseRepository repository)
+        public LeaseController(ILeaseRepository LeaseRepository)
         {
-            _leaseRepository = repository;
+            _leaseRepository = LeaseRepository;
         }
 
         [HttpGet]
@@ -37,6 +37,31 @@ namespace WebApi.Controllers
                 }
 
                 return Ok(leases);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Internal Server Error, please contact support");
+            }
+        }
+        [HttpGet]
+        [Route("GetAllTenants")]
+        public async Task<IActionResult> GetAllTenants()
+        {
+            try
+            {
+                var allTenants = await _leaseRepository.GetAllTenantsAsync();
+                List<Tenant> tenants = new();
+                foreach (var tenant in allTenants)
+                {
+                    tenants.Add(new Tenant
+                    {
+                        TenantID = tenant.TenantID,
+                        CompanyEmail = tenant.CompanyEmail,
+                        CompanyName = tenant.CompanyName
+                    });
+                }
+
+                return Ok(tenants);
             }
             catch (Exception)
             {

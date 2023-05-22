@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using WebApi.Models.Broker;
 using WebApi.Models.Lease;
-using WebApi.Models.Tenant;
 
 namespace WebApi.Repositories
 {
@@ -13,10 +12,10 @@ namespace WebApi.Repositories
         {
         }
 
-        public DbSet<Broker> Brokers { get; set; }
-        public DbSet<WebApi.Models.Property.Property> Properties { get; set; }
-        public DbSet<Tenant> Tenants { get; set; }
-        public DbSet<Lease> Leases { get; set; }
+        public DbSet<Broker> Broker { get; set; }
+        public DbSet<WebApi.Models.Property.Property> Property { get; set; }
+        public DbSet<Tenant> Tenant { get; set; }
+        public DbSet<Lease> Lease { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

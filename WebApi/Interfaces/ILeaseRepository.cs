@@ -10,5 +10,7 @@ namespace WebApi.Interfaces
 
         Task<Lease[]> GetAllLeasesAsync();
         Task AddLease(Lease lease);
+
+        Task<Tenant[]> GetAllTenantsAsync();
     }
 }

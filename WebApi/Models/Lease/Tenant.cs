@@ -1,4 +1,4 @@
-﻿namespace WebApi.Models.Tenant
+﻿namespace WebApi.Models.Lease
 {
     public class Tenant
     {

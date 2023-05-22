@@ -24,7 +24,7 @@ namespace WebApi.Repositories
 
         public async Task<Lease[]> GetAllLeasesAsync()
         {
-            IQueryable<Lease> query = _appDbContext.Leases.Include(x => x.Property).Include(x => x.Tenant);
+            IQueryable<Lease> query = _appDbContext.Lease.Include(x => x.Property).Include(x => x.Tenant);
             return await query.ToArrayAsync();
         }
 
@@ -34,5 +34,20 @@ namespace WebApi.Repositories
             _appDbContext.Add(lease);
             await _appDbContext.SaveChangesAsync();
         }
+
+        public async Task EditLease(int leaseID, Lease lease) { }
+
+        public async Task DeleteLease(Lease lease) { }
+
+        public void Delete<T>(T entity) where T : class
+        {
+            _appDbContext.Remove(entity);
         }
+        public async Task<Tenant[]> GetAllTenantsAsync()
+        {
+            IQueryable<Tenant> query = _appDbContext.Tenant;
+
+            return await query.ToArrayAsync();
+        }
+    }
     }

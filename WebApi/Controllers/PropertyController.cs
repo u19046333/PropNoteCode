@@ -37,7 +37,7 @@ namespace WebApi.Controllers
                         BuildingNumber = property.BuildingNumber,
                         Description = property.Description,
                         PurchaseAmount = property.PurchaseAmount,
-                        PurchaseDate = property.PurchaseDate,
+                        PurchaseYear = property.PurchaseYear,
                         Size = property.Size,
                         Street = property.Street,
                         Suburb = property.Suburb,
@@ -65,7 +65,7 @@ namespace WebApi.Controllers
                Suburb = propertyRequest.Suburb,
                Street = propertyRequest.Street,
                Size = propertyRequest.Size,
-               PurchaseDate = propertyRequest.PurchaseDate,
+                PurchaseYear = propertyRequest.PurchaseYear,
                BrokerID = propertyRequest.BrokerID,
                PurchaseAmount = propertyRequest.PurchaseAmount,
                
