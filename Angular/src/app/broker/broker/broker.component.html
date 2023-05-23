@@ -1,0 +1,45 @@
+<body>
+  <h1>Course List Table</h1>
+  <div class="table-wrapper">
+    <table class="fl-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Number</th>
+          <th>Address</th>
+          <th>License</th>
+          <th>Commission</th>
+          <!-- <th></th>
+          <th></th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of brokers">
+          <td>{{ item.name }} {{ item.surname }}</td>
+          <td>{{ item.phoneNumber }}</td>
+          <td>{{ item.officeAddress }}</td>
+          <td>{{ item.licenseNumber }}</td>
+          <td>{{ item.commissionRate }}</td>
+          <!-- <td>
+            <button
+              (click)="editCourses(item.courseId)"
+              class="custom-btn btn-3"
+            >
+              <span>Edit</span>
+            </button>
+          </td>
+          <td>
+            <button
+              class="custom-btn btn-5"
+              (click)="deleteCourses(item.courseId)"
+            >
+              <span>Delete</span>
+            </button>
+          </td> -->
+        </tr>
+      </tbody>
+
+      <tbody></tbody>
+    </table>
+  </div>
+</body>

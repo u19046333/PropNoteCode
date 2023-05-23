@@ -1,2 +1,164 @@
-<app-user-nav-bar></app-user-nav-bar>
-<router-outlet></router-outlet>
+<!--LEFT SIDE NAVBAR-->
+<mat-toolbar color="accent">
+  <mat-toolbar-row>
+    <span class="menu">
+      <button mat-icon-button class="bigger-icon" (click)="toggleSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </span>
+    <span class="home">
+      <button mat-icon-button class="bigger-icon" (click)="onClickHome()">
+          <mat-icon>
+            home
+          </mat-icon>
+      </button>
+    </span>
+    <span class="propnote"><h1>PropNote</h1></span>
+
+    <span class="account">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon class="bigger-icon">account_circle</mat-icon>
+      </button>
+        <!--RIGHT SIDE DROPDOWN-->
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item><a mat-list-item [routerLink]="'/view-profile'"> View Profile</a></button>
+        <button mat-menu-item><a mat-list-item [routerLink]="'/edit-profile'">Edit Profile</a></button>
+        <button mat-menu-item>Change Password</button>
+        <button mat-menu-item>Notifications</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened="true" class="side-container">
+  <mat-nav-list>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-icon>account_box</mat-icon>
+          <a mat-list-item [routerLink]="'/users'"> Users</a>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          View Users
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item [routerLink]="'/user-role'"> View User Roles</a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-icon>factory</mat-icon>
+          <a mat-list-item [routerLink]="'/property'"> Properties</a>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          View Properties
+        </mat-nav-list>
+        <mat-nav-list>
+          Generate Property Report
+        </mat-nav-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-icon>person</mat-icon>
+          <a mat-list-item [routerLink]="'/tenants'"> Tenants</a>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          View Tenants
+        </mat-nav-list>
+        <mat-nav-list>
+          Generate Tenants Report
+        </mat-nav-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-icon>handyman</mat-icon>
+          <a mat-list-item [routerLink]="'/contractors'"> Contractors</a>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          View Contractors
+        </mat-nav-list>
+        <mat-nav-list>
+          Generate Contractors Report
+        </mat-nav-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-icon>group</mat-icon>
+          <a mat-list-item [routerLink]="'/employee'"> Employee</a>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          View Employees
+        </mat-nav-list>
+      </mat-expansion-panel>
+      
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-icon>real_estate_agent</mat-icon>
+          <a mat-list-item [routerLink]="'/broker'"> Broker</a>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          View Broker
+        </mat-nav-list>
+        <mat-nav-list>
+          Generate Broker Report
+        </mat-nav-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-icon>engineering</mat-icon>
+          <a mat-list-item [routerLink]="'/maintenace'"> Maintenance</a>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          Assign Maintenance
+        </mat-nav-list>
+        <mat-nav-list>
+          Payment
+        </mat-nav-list>
+        <mat-nav-list>
+          Maintenance Note
+        </mat-nav-list>
+        <mat-nav-list>
+          Generate Maintenance Report
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-icon>calendar_month</mat-icon>
+          <a mat-list-item [routerLink]="'/calendar'"> Calendar</a>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          View Calendar
+        </mat-nav-list>
+        <mat-nav-list>
+          Generate Meetings Report
+        </mat-nav-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-icon>settings</mat-icon>
+          <a mat-list-item [routerLink]="'/settings'"> Settings</a>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-icon>logout</mat-icon>
+          <a mat-list-item [routerLink]="'/logout'"> Log out</a>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+      
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content-container">
+    <div style="height: 88vh;">
+      <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-content>
+</mat-sidenav-container>
